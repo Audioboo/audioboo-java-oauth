@@ -8,7 +8,7 @@ Depends on [Signpost 1.2](https://code.google.com/p/oauth-signpost/) and the Com
 You can compile & run using: 
 
 ```
-javac -cp commons-codec-1.3.jar:signpost-core-1.2.1.2.jar src/BooOAuth.java
-java -classpath commons-codec-1.3.jar:signpost-core-1.2.1.2.jar:src BooOAuth
+javac -cp 'lib/*.jar' src/BooOAuth.java
+java -classpath 'lib/*.jar:.' BooOAuth
 ```
 
