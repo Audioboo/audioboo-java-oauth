@@ -12,17 +12,17 @@ import oauth.signpost.basic.DefaultOAuthProvider;
 
 class BooOAuth {
   public static void main(String[] args) throws Exception {
-    // Obtain your api key & secret from https://audioboo.fm/account/services
     String apiKey = "...";
     String apiSecret = "...";
+    // Obtain your api key & secret from https://audioboom.com/account/services
 
     OAuthConsumer consumer = new DefaultOAuthConsumer(apiKey, apiSecret);
     OAuthProvider provider = new DefaultOAuthProvider(
-        "http://api.audioboo.fm/oauth/request_token",
-        "http://api.audioboo.fm/oauth/access_token",
-        "http://api.audioboo.fm/oauth/authorize");
+        "https://api.audioboom.com/oauth/request_token",
+        "https://api.audioboom.com/oauth/access_token",
+        "https://api.audioboom.com/oauth/authorize");
 
-    System.out.println("Fetching request token from Audioboo...");
+    System.out.println("Fetching request token from audioBoom...");
 
     // we do not support callbacks, thus pass OOB
     String authUrl = provider.retrieveRequestToken(consumer, OAuth.OUT_OF_BAND);
@@ -42,10 +42,10 @@ class BooOAuth {
     System.out.println("Access token: " + consumer.getToken());
     System.out.println("Token secret: " + consumer.getTokenSecret());
 
-    // Now that we have an access token we can use it to make authenticated requests to the API.  For example, fetching account details from http://api.audioboo.fm/account 
+    // Now that we have an access token we can use it to make authenticated requests to the API.  For example, fetching account details from https://api.audioboom.com/account 
 
     System.out.println("Fetching account details...");
-    URL url = new URL("http://api.audioboo.fm/account");
+    URL url = new URL("https://api.audioboom.com/account");
     HttpURLConnection request = (HttpURLConnection) url.openConnection();
     consumer.sign(request);
     request.connect();

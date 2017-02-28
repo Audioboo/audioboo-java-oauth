@@ -26,7 +26,7 @@ class BooOAuthUpload {
       throw new IllegalArgumentException("Invoke with a file path to upload");
     }
 
-    // Obtain your api key & secret from https://audioboo.fm/account/services
+    // Obtain your api key & secret from https://audioboom.com/account/services
     String apiKey = "...";
     String apiSecret = "...";
     // You'll also need an authorized access token.  Try running the 'BooOAuth' java program to obtain one.
@@ -37,7 +37,7 @@ class BooOAuthUpload {
     consumer.setTokenWithSecret(accessToken, accessSecret);
 
     File f = new File(args[0]);
-    HttpPost post = new HttpPost("http://api.audioboo.fm/account/audio_clips");
+    HttpPost post = new HttpPost("https://api.audioboom.com/account/audio_clips");
     MultipartEntity entity = new MultipartEntity();
     entity.addPart("audio_clip[title]", new StringBody("my first boo"));
     entity.addPart("audio_clip[uploaded_data]", new FileBody(f));

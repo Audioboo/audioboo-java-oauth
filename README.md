@@ -1,7 +1,7 @@
 audioboo-java-oauth
 ===================
 
-An example command line tool using OAuth to talk to audioboo.fm
+An example command line tool using OAuth to talk to audioboom.com
 
 Depends on [Signpost 1.2](https://code.google.com/p/oauth-signpost/) and the Commons Codec
 
