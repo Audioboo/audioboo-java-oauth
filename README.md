@@ -9,7 +9,7 @@ You can compile & run using:
 
 ```
 javac -cp 'lib/*' src/BooOAuth.java
-java -cp 'lib/*:src' BooOAuth
+java -cp 'lib/*:src' BooOAuth <api_key> <api_secret>
 ```
 
 The project also includes BooOAuthUpload, which is a simple demonstration of uploading a boo:

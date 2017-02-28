@@ -12,9 +12,12 @@ import oauth.signpost.basic.DefaultOAuthProvider;
 
 class BooOAuth {
   public static void main(String[] args) throws Exception {
-    String apiKey = "...";
-    String apiSecret = "...";
     // Obtain your api key & secret from https://audioboom.com/account/services
+    if (args.length != 2) {
+      throw new java.lang.RuntimeException("Please supply your key & secret");
+    }
+    String apiKey = args[0];
+    String apiSecret = args[1];
 
     OAuthConsumer consumer = new DefaultOAuthConsumer(apiKey, apiSecret);
     OAuthProvider provider = new DefaultOAuthProvider(
